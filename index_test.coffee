@@ -1,3 +1,10 @@
+### 
+Test AWS Lambda function publishing custom event to ZADATA MQTT service
+
+@author Zvi Avraham <zvi-AT-zadata-DOT-com>
+@copyright 2014 ZADATA Ltd. All Rights Reserved.
+###
+
 handler = require('./index').handler
 
 context = {
