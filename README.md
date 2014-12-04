@@ -29,7 +29,7 @@ NOTE: you have two MQTT passwords (one for subscribers only, the other with subs
 
 
 We use ZADATA MQTT service for testing:
-- http://mqtt.zadata.com/
+- mqtt.zadata.com:1883
 
 We use following npm module which implements MQTT client for Node.js:
 - https://www.npmjs.org/package/mqtt
