@@ -18,7 +18,7 @@ AWS Lambda which function as a brdge between custom events and MQTT Broker.
 
 
 We use this public MQTT broker for testing:
-- http://test.mosquitto.org/
+- http://mqtt.zadata.com/
 
 We use following npm module which implements MQTT client for Node.js:
 - https://www.npmjs.org/package/mqtt
@@ -36,7 +36,7 @@ npm install -g mqtt
 Test that it works:
 
 ``` bash
-mqtt_sub 1883 test.mosquitto.org '#'
+mqtt_sub 1883 mqtt.zadata.com '#'
 ...
 <topic> <value>
 ...
@@ -46,7 +46,7 @@ CTRL-C
 or same thing with mosquitto CLI client:
 
 ``` bash
-mosquitto_sub -h test.mosquitto.org -t '#' -v
+mosquitto_sub -h mqtt.zadata.com -t '#' -v
 ...
 <topic> <value>
 ...
@@ -72,13 +72,13 @@ Prepare and upload function to the AWS Lambda service with:
 Now in one terminal window run:
 
 ``` bash
-mqtt_sub 1883 test.mosquitto.org my-topic
+mqtt_sub 1883 mqtt.zadata.com my-topic
 ```
 
 or alternatively using mosquitto CLI client:
 
 ``` bash
-mosquitto_sub -h test.mosquitto.org -t my-topic -v
+mosquitto_sub -h mqtt.zadata.com -t my-topic -v
 ```
 
 

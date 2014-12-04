@@ -1,11 +1,15 @@
 mqtt = require('mqtt')
 
+MQTT_USER     = "your MQTT username on ZADATA"
+MQTT_PWD      = "your MQTT password on ZADATA"
+MQTT_CLIENTID = "some_client_id"
+
 console.log "Loading event"
 
 exports.handler = (event, context) ->
   console.log "event =\n", event
 
-  client = mqtt.connect("mqtt://test.mosquitto.org:1883")
+  client = mqtt.connect("mqtt://#{MQTT_USER}:#{MQTT_PASS}@mqtt.zadata.com:1883?clientId=#{MQTT_CLIENTID}")
   console.log "after mqtt.connect()"
 
   client.publish event.topic, event.value, 
