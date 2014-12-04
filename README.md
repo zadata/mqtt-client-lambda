@@ -17,7 +17,7 @@ AWS Lambda which function as a brdge between custom events and MQTT Broker.
     ```
 
 
-### ZADAT account (requires invitation)
+### ZADATA account (requires invitation)
 
 Get your MQTT credentials from http://ZADATA.com:
 
