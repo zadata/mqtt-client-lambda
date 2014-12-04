@@ -17,7 +17,18 @@ AWS Lambda which function as a brdge between custom events and MQTT Broker.
     ```
 
 
-We use this public MQTT broker for testing:
+### ZADAT account (requires invitation)
+
+Get your MQTT credentials from http://ZADATA.com:
+
+To find your MQTT Username and Password login into your ZADATA account on http://ZADATA.com and click navbar -> Settings -> Credentials.
+
+NOTE: you have two MQTT passwords (one for subscribers only, the other with subscriber and publisher priveleges - use the one for publishers).
+
+
+
+
+We use ZADATA MQTT service for testing:
 - http://mqtt.zadata.com/
 
 We use following npm module which implements MQTT client for Node.js:
@@ -36,7 +47,7 @@ npm install -g mqtt
 Test that it works:
 
 ``` bash
-mqtt_sub 1883 mqtt.zadata.com '#'
+mqtt_sub 1883 mqtt.zadata.com '#' "MQTT Username" "MQTT Password"
 ...
 <topic> <value>
 ...
@@ -46,7 +57,7 @@ CTRL-C
 or same thing with mosquitto CLI client:
 
 ``` bash
-mosquitto_sub -h mqtt.zadata.com -t '#' -v
+mosquitto_sub -h mqtt.zadata.com -u "MQTT Username" -P "MQTT Password" -t '#' -v
 ...
 <topic> <value>
 ...
@@ -78,7 +89,7 @@ mqtt_sub 1883 mqtt.zadata.com my-topic
 or alternatively using mosquitto CLI client:
 
 ``` bash
-mosquitto_sub -h mqtt.zadata.com -t my-topic -v
+mosquitto_sub -h mqtt.zadata.com  -u "MQTT Username" -P "MQTT Password" -t my-topic -v
 ```
 
 
